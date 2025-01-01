@@ -1,31 +1,103 @@
 # FoodicsTask
 For the 1st task
-1. Set Up the Automation Framework
-Framework Design
-1.	Use a Testing Framework:
-o	Use RestAssured for API testing due to its fluent interface and rich feature set.
-o	TestNG for test execution and reporting.
-o	Maven for dependency management.
-o	Follow a structured approach to organize test cases, utilities, and configuration files.
-2.	Configuration Management:
-o	Externalize API base URLs and other configuration parameters using properties files or environment variables
-     3. You will be working with the base url https://reqres.in to implement the following scenarios 
-a. Create a User
-•	Send a POST request to /api/users with a JSON payload containing user details (e.g., name, job, age).
-•	Validate the response to ensure the user is created successfully.
+Automated Test Suite for Amazon Workflow
+Overview
+This project automates key functionalities of an e-commerce website, specifically Amazon. The test suite is designed using Selenium WebDriver and TestNG to validate core workflows, including login, product filtering, cart management, checkout, and logout.
 
-b. Retrieve a User
-•	Send a GET request to /api/users/{id} using the user ID from the creation step.
-•	Validate that the returned information matches the created user details.
-c. Update a User
-•	Send a PUT request to /api/users/{id} with updated details.
-•	Validate that the response confirms the update and that the changes are reflected
-4. Implement Error Handling:
-•	Ensure robust error handling for scenarios such as invalid requests, network failures, and unexpected responses.
-•	Log detailed error messages for debugging.
-5. Code Quality and Version Control:
-•	Code Quality: Follow best practices for writing clean, maintainable, and reusable code.
-•	Version Control: Use version control (e.g., Git) to manage your test scripts and provide access to your repository, Important Notes:Add a readme file which should be clear enough and the evaluator can easily install the project with all dependencies and run it successfully.
+Features Tested
+Login Functionality
+
+Logs into the application using valid credentials.
+Verifies successful login.
+Navigation to Video Games Section
+
+Automates navigation to the Video Games section using menu interactions.
+Product Filtering and Sorting
+
+Applies filters such as free shipping and new condition.
+Sorts products by price (high to low).
+Adding Products to Cart
+
+Identifies and adds products priced below a specified threshold (e.g., 15,000) to the cart.
+Checkout Process
+
+Proceeds to checkout and fills in address details.
+Handles unexpected pop-ups or interruptions during the process.
+Cart Management
+
+Removes all products from the cart after checkout to ensure cart cleanliness.
+Logout Functionality
+
+Logs out of the application by hovering over the account menu and clicking the logout button.
+How to Enhance the Tests
+Data-Driven Testing
+
+Use external data sources (e.g., Excel, CSV, JSON) to provide input for username, password, price threshold, and address details.
+Cross-Browser Testing
+
+Execute tests on different browsers (e.g., Firefox, Safari, Edge) to ensure compatibility.
+Improved Exception Handling
+
+Implement robust exception handling for network issues, dynamic element loading, and unexpected behavior.
+Reporting
+
+Integrate tools like Allure or Extent Reports for better test execution insights and reporting.
+Parallel Execution
+
+Use TestNG's parallel execution feature to run tests concurrently and reduce execution time.
+Assertions
+
+Add more validation points (e.g., verify product name and price in the cart, confirm order placement success).
+Performance Testing
+
+Measure page load times and responsiveness of various actions.
+Additional Test Cases to Add
+Negative Test Cases
+
+Attempt login with invalid credentials.
+Try to add an out-of-stock product to the cart.
+Proceed to checkout without adding any products.
+Search Functionality
+
+Verify the search results for specific keywords.
+Test advanced search filters and their combinations.
+Payment Gateway Testing
+
+Validate payment options like COD, credit cards, and wallets.
+Test failed payment scenarios.
+Order History Verification
+
+Check if completed orders appear in the order history.
+Wishlist Functionality
+
+Add items to the wishlist and verify their presence.
+Move items from the wishlist to the cart.
+UI and UX Validation
+
+Test the responsiveness of the site across different screen sizes.
+Validate the alignment and visibility of critical elements.
+Bulk Actions
+
+Test adding multiple items to the cart and removing them.
+Verify the correct calculation of the total cart amount.
+How to Run the Tests
+Prerequisites
+
+Install Java JDK 8 or higher.
+Install Maven for dependency management.
+Install ChromeDriver and add it to your system PATH.
+Setup
+
+Clone this repository.
+Run mvn clean install to download dependencies.
+Execution
+
+Run tests using TestNG by executing the testng.xml file or directly running RunTestCases class in your IDE.
+Post-Test
+
+Review the console output for results.
+Check the reports directory (if configured) for detailed execution results.
+
 
 For the 2nd task
 # RestAssured API Testing Project
